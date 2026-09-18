@@ -70,7 +70,7 @@ select {
     bottom: -100px
 }
 
-.hero-inner {
+.hero-inner, .hero-flex {
     position: relative;
     z-index: 2;
     display: flex;
@@ -78,28 +78,11 @@ select {
     gap: 20px
 }
 
-.hero-flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px
-}
-
-.logo {
+.logo, .intechlogo {
     width: 72px;
     height: 72px;
     border-radius: 18px;
     background: #fff;
-    padding: 7px;
-    object-fit: contain;
-    box-shadow: 0 7px 20px rgba(0, 0, 0, .18)
-}
-
-.intechlogo {
-    width: 72px;
-    height: 72px;
-    border-radius: 18px;
-    background-color: #fff;
     padding: 7px;
     object-fit: contain;
     box-shadow: 0 7px 20px rgba(0, 0, 0, .18)
@@ -378,11 +361,11 @@ select:focus {
         padding: 25px 19px
     }
 
-    .hero-inner {
+    .hero-inner, .hero-flex {
         align-items: flex-start
     }
 
-    .logo {
+    .logo, .intechlogo {
         width: 58px;
         height: 58px;
         border-radius: 14px
