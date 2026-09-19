@@ -31,9 +31,17 @@
     <main class="grid">
       <section class="card">
         <div class="smallcaps">Student Selection</div>
+        
         <h2>Choose your fee category</h2>
         <p class="sub">Select the options that apply. Professional Training is ₦22,600 for the listed specialised
-          departments in Year 2, Year 3 and Year 4.</p>
+          departments in Year 2, Year 3 and Year 4.
+        </p>
+      
+        <div class="info">
+          <strong>Important:</strong> This calculator is based on the 2026/2027 IAUE fee payment schedule. Portal access
+          fee, Clearance Fee, Students' Unique Service Fee (SUS), Processing Charge and Inter-switch are added automatically. You are free to confirm the final amount on
+          the official university payment schedule before proceeding to make payment.
+        </div>
 
         <div class="field">
           <label for="status">Student Status</label>
@@ -141,9 +149,7 @@
         </div>
 
         <div class="info">
-          <strong>Important:</strong> This calculator is based on the 2026/2027 IAUE fee payment schedule. Portal access
-          fee, Processing Charge and Inter-switch are added automatically. You are free to confirm the final amount on
-          the official university payment schedule before proceeding to make payment.
+          <strong>PLEASE NOTE:</strong> Portal access fee, Clearance Fee, Students' Unique Service Fee (SUS), Processing Charge and Inter-switch have been added automatically.
         </div>
 
         <div class="action">
@@ -254,7 +260,7 @@
         const school = schoolFees[status][category][level];
         const portal = 7600;
         const clearance = level === "year1" ? 0 : 27600;
-        const union = level === "year1" ? 0 : 26300;
+        const sus = level === "year1" ? 0 : 26300;
         const professional = department !== "none"
           && professionalTrainingDepartments.has(department)
           && ["year2", "year3", "year4"].includes(level) ? professionalTrainingFee : 0;
@@ -265,14 +271,14 @@
         const bank = 1000;
         const interSwitch = 500;
 
-        const total = school + portal + clearance + union + professional
+        const total = school + portal + clearance + sus + professional
           + departmental + hostelAmount + bindingAmount + bank + interSwitch;
 
         const rows = [
           ["School Fees", school],
           ["Portal Access", portal],
           ["Clearance Fee — Returning Students", clearance],
-          ["Students' Union Fee — Returning Students", union],
+          ["Students' Unique Service Fee — Returning Students", sus],
           ["Professional Training — " + departmentLabels[department], professional],
           ["Departmental Fee — " + departmentalFeeLabels[departmentalFee], departmental],
           ["Hostel Accommodation — " + hostelLabels[hostel], hostelAmount],
